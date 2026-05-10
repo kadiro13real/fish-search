@@ -1,5 +1,7 @@
 import requests
 from flask import Flask,render_template,request
+import time
+import threading
 
 class Fish:
     def __init__(self, lat=None, lon=None, month=None, day=None, hour=None, coords=None):
@@ -15,6 +17,22 @@ class Fish:
 
 
 app = Flask(__name__)
+
+def keep_alive()
+    while True
+        try:
+            requests.get("https://fish-search.onrender.com")
+        except:
+            pass
+        time.sleep(600)
+
+
+threading.Thread(target=keep_alive, daemon=True).start()
+
+
+
+
+
 @app.route('/')
 def home():
     fish = request.args.get("fish")
