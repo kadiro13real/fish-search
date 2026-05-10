@@ -18,8 +18,8 @@ class Fish:
 
 app = Flask(__name__)
 
-def keep_alive()
-    while True
+def keep_alive():
+    while True:
         try:
             requests.get("https://fish-search.onrender.com")
         except:
